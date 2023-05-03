@@ -1,6 +1,6 @@
 ## Why create a nodeJS server 
 
-to render a HTML page, we need a web server. Even when we use live server extension of VS code, VS code is creating a web server for us. 
+To render a HTML page, we need a web server. Even when we use live server extension of VS code, VS code is creating a web server for us. 
 
 Therefore, to render any webpage, we need to create a nodeJS server first and then render our web page on it 
 
