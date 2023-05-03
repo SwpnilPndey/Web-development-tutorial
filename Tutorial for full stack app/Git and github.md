@@ -1,9 +1,28 @@
-# Goto following link to read fundamentals of git and github
+# How to push code from local repo to remote repo
 
-https://gateway.pinata.cloud/ipfs/QmZ2A8Y9cpMYG3mn4wAP6em6v5hkmN7vvfdjqLUDj8CstS?_gl=1*1kw6288*rs_ga*ZTEzMDdhMjgtNTM2My00YmNiLThkM2UtZTI4Njk3OWFhODUz*rs_ga_5RMPXG14TE*MTY4MjMxMDQzNC4yLjEuMTY4MjMxMDY4Ny42MC4wLjA.
+1) Create a project folder 
+2) Make project files 
+3) Initialise git using git init 
+4) Add changes in project to staging area using git add .
+5) Commit those changes : git commit -m "Message"
+6) Create a remote repo in github 
+7) Create SSH key in local computer :- 
+  - : Write following on terminal : ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  - Press enter twice
+  - A message will be displayed giving the location where the SSH key has been generated : <some address>/.ssh/
+  - Use cat ~/.ssh/id_rsa.pub to display the SSH key on terminal
+  - Goto Github > Developer settings > Generate SSH and GPG keys > Create new Key >paste the SSH key from terminal and save it 
+8) Add remote using SSH URL : git remote add origin <SSH URL of github repo>
+9) Push the changes to remote repo using : git push origin <name of the branch>
+
+The code has been pushed. 
+
+If we make some changes in remote repo, we can sync our local repo using : git pull origin master (default branch)
 
 
-## How to raise PR and merge request 
+
+
+# How to do open source contribution using PRs
 
 1) Go to the the upstream repo and fork it
 2) Use SSH (or HTTPs) to clone the project from your repo 
