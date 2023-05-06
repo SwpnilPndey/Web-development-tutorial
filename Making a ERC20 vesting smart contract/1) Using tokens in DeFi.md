@@ -12,6 +12,3 @@ After the initial token sale, the tokens can be traded on a variety of exchanges
 Very similar to shares, the value of tokens is volatile and driven by market forces and sentiments.
 
 Other way people can earn company tokens is buy AIRDROPS which means free tokens. Companies expand their user base in which the user needs to do some activities like liking and subscribing on social media. sending the airdrop links to others etc.
-
-
-
