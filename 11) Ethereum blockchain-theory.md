@@ -188,3 +188,30 @@ Geth is a local web3 provider since it allows the use of the JSON-RPC API of eth
 Metamask is a injected web3 provider or browser web3 provider since it allows to use JSON-RPC API of network
 
 Infura is also a web3 provider since it allows to use JSON-RPC API of blockchain
+
+
+
+## Advantages with ethereum : 
+
+large community, more dapps, decentralization is valued, Ethereum 2.0 (move to PoS, increase block size)
+
+
+
+## Challenges with ethereum : 
+
+high fees, smaller block, smart contract vulnerabilities, no regulation (frauds), volatile prices, limited acceptance in real world, technical complexity
+
+
+
+## What is ethereum trilemma : 
+
+decentralization, security and scalability (only two at a time)
+
+
+## Current solutions to scalability : 
+
+sharding, layer-2 solutions like channels, plasma. roll ups, side chains
+
+![How scalability works](/images/scalability.gif)
+
+
