@@ -3,8 +3,6 @@
 If it has multiple html pages having different CSS and JS which is mostly the case, then we need to create a nodeJS webserver to handle HTTP requests on different routes
 
 
-
-
 ## Include web3.JS script from CDN in header
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
