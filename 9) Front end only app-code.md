@@ -18,7 +18,7 @@ Therefore, to render any webpage, we need to create a nodeJS server first and th
 
 6. Make **server.js** in root folder
 
-6. Make all required html pages inside a **src** folder in root
+6. Make all required html pages inside a **src** folder in root 
 
 7. In the server.js, initialise with following code :
 
