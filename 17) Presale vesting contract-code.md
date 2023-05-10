@@ -1,8 +1,8 @@
 ## What is a vesting/locking contract?
 
-When investors invest money in a company then company doesnot release tokens immediately but rather releases gradually, as per a vesting schedule
+This is mostly done in presale events where investors get tokens at cheaper prices but they have to keep the tokens locked and withdraw only as per a vesting schedule. 
 
-Investors typically use a lock function to lock their tokens in the vesting contract and after the lock period is over, they can withdraw their tokens if they want or keep them invested if they want to earn interests on it.
+Investors use the lock function to lock their tokens in the vesting contract and after the lock period is over, they can withdraw the unlocked tokens (as per vesting schedule) if they want or keep them invested if they want to earn interests on it.
 
 This is generally done so that investors donot sell all their tokens immediately after ICO and hurt other investors and destabilize the market caused by inflation.
 
