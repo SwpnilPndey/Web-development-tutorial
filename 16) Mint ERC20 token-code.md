@@ -39,3 +39,4 @@ contract Invest {
 } 
 
 
+### Here Invest smart contract should first be approved by the Token contract to spend the tokens on owner's behalf

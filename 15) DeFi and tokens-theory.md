@@ -28,6 +28,15 @@ Very similar to shares, the value of tokens is volatile and driven by market for
 Other way people can earn company tokens is to become whitelisted user and get free tokens called AIRDROPS. Companies expand their user base in which the user needs to do some activities like liking and subscribing on social media, sending the airdrop links to others etc.
 
 
+
+## What is a DEX?
+
+
+
+
+
+
+
 ## What is Automated Market Maker in a DEX?
 
 
