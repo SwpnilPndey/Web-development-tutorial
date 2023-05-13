@@ -29,7 +29,35 @@ Other way people can earn company tokens is to become whitelisted user and get f
 
 
 
+## What is presale vesting of tokens?
+
+The presale events are those where investors get tokens at cheaper prices but they have to keep the tokens locked and withdraw only as per a vesting schedule. 
+
+Investors use the lock function to lock their tokens in the vesting contract and after the lock period is over, they can withdraw the unlocked tokens (as per vesting schedule) if they want or keep them invested if they want to earn interests on it.
+
+This is generally done so that investors donot sell all their tokens immediately after ICO and hurt other investors and destabilize the market caused by inflation.
+
+
+
+
 ## What is a DEX?
+
+
+
+
+## How does staking work?
+
+
+
+
+
+
+
+
+## How does Liquidity pool work?
+
+
+
 
 
 
