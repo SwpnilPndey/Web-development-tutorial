@@ -19,13 +19,14 @@ Companies create token, distribute them to investors and raise funds via ICO (si
 
 Investors can benefit in a number of ways in the project ecosystem using those tokens like low cost of tokens if investors invest in presale (showing confidence in project) or subsidized access to company services and dapps or voting rights in significant decisions 
 
-Investors can also stake their share of tokens and earn token staking reward and portion of transaction fees and this way appreciate the token value with time 
+Investors can also stake their share of tokens and earn token staking reward (in terms of native tokens or some other tokens) and portion of transaction fees and this way appreciate the token value with time 
 
 After the initial token distribution, the tokens can be traded on a variety of exchanges, including centralized exchanges like Binance or Coinbase, as well as decentralized exchanges like Uniswap or Sushiswap.
 
 Very similar to shares, the value of tokens is volatile and driven by market forces and sentiments.
 
 Other way people can earn company tokens is to become whitelisted user and get free tokens called AIRDROPS. Companies expand their user base in which the user needs to do some activities like liking and subscribing on social media, sending the airdrop links to others etc.
+
 
 
 
@@ -40,12 +41,31 @@ This is generally done so that investors donot sell all their tokens immediately
 
 
 
-## What is a DEX?
+## How does staking and staking reward work ?
+
+Owner will set the reward amount and the locking period (duration for which the token needs to be staked/ locked)
+
+Lets, say a user stakes 200 tokens for one week
+
+So, simply if total staked tokens are lets say 2000, and 1000 tokens are given for every week of staking, then  the rewards that he user will get : 
+
+Reward tokens = 200/2000 * (1000 per week)* (no. of weeks he staked)
+
+So, if he staked for one week, he will earn 100 extra tokens as rewards 
+
+### In terms of tokenomics, owner stes the reward, sends it to the staking contract, users lock their tokens in the staking contract and based on the period of staking, staking contract transfers the reward tokens to the user
+
+We can calculate the rewards earned by user from time i=k to i=n seconds as :  
+
+![Staking rewards formula](/images/staking_rewards.png)
 
 
 
 
-## How does staking work?
+## What is a DEX and how does it work ?
+
+
+
 
 
 
