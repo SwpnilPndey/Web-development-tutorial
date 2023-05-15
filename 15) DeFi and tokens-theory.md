@@ -60,6 +60,20 @@ We can calculate the rewards earned by user from time i=k to i=n seconds as :
 ![Staking rewards formula](/images/staking_rewards.png)
 
 
+However above formula uses a lot of gas, so in solidity the formula is reduced as : 
+
+(Considering S as constant (staked tokens)), 
+
+
+![Staking rewards in solidity](/images/staking_rewards_2.png)
+
+**The first term is reward per token and the other is reward per token paid**
+
+
+
+
+
+
 
 
 ## What is a DEX and how does it work ?
