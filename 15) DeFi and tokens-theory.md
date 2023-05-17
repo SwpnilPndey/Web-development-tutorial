@@ -70,37 +70,79 @@ However above formula uses a lot of gas, so in solidity the formula is reduced a
 **The first term is reward per token and the other is reward per token paid**
 
 
+So, the staking algorithm goes as : 
+
+1. Calculate rewards per token
+
+r+= R/totalSupply * (Current timestamp-lastupDateTime), where R is Rewards/second
 
 
+2. Calculate rewards earned by user : 
+
+rewards[user]+=balanceOf[user]*(r-userRewardperTokenPaid[user])
+
+
+3. Update user reward per token paid : 
+
+userRewardperTokenPaid[user]= current value of r
+
+
+4. Update last update time : 
+
+lastupDateTime=current time
+
+
+5. Update staked amount and total supply : 
+
+balanceOf[user] +/- = amount, based on staking or withdrawing 
+totalSupply +/- = amount, based on staking or withdrawing 
+
+
+
+**Everytime, some user stakes, this above logic is executed.**
 
 
 
 
 ## What is a DEX and how does it work ?
 
+Each of these words we hear, DEX, Liquidity pool exchange or swap exchange are basically same thing.
+
+### How a CEX works in real world ?
+
+If we talk about CEX first, they work on the concept of CLOB (Centralised Limit Order Book). The CEX maintains a ledger where on one side there are sell orders (price offers) and on other side there are buy orders (price bids). For example, there is one seller who wants to sell at Rs. 105 per share and there is one buyer who wants to buy at Rs. 95 per share. Then order is not complete and the record keeps on building this way. 
+
+If there comes two entries of same price, it is on FTFS basis, this is called Price Time Priority. Which means that for buy order : highest price is highest priority, for sell, it is for lowest sell price. For same price, time is the criteria. 
 
 
+### How do Crypto CEX work?
+
+They work similar to stock exchanges but they are fast, reliable and deal in cryptos.The CEX provide a different crypto address to every user which is different from our own personal wallet address. (Similar to wallets in stock exchanges)
+
+There are two types of transactions on CEX : deposit/ withdraw and buy/sell
+
+The deposit and withdrawl means we transfer cryptos between our personal address & CEX provided address. This transaction is recorded on blockchain. 
+
+However the buy and sell of cryptos is not recorded on blockchain and is maintained internally by CEX. 
 
 
+### What are types of DEX ?
+
+On DEXs, their is no concept of using fiat currency for cryptos. We can buy one token for another token only. 
 
 
+There are primarly three types of DEX : 
+
+- AMM based : smart contract based relative prices, there is no CLOB . Eg : Uniswap
+
+- Hydrid model : off chain CLOB is there, on chain record of trades
+
+- On chain CLOB : completely on blockchain. Eg : Serum on solana
+
+- Aggregators based : DEX of DEXes to get best deal. Eg : 1 inch
 
 
-
-
-## How does Liquidity pool work?
-
-
-
-
-
-
-
-
-
-
-## What is Automated Market Maker in a DEX?
-
+### What is Automated Market Maker in a DEX?
 
 An AMM is a part of decentralized exchange (DEX) that relies on a mathematical formula to determine the prices of assets being traded on the platform.
 
@@ -125,3 +167,21 @@ So, extra token B would be = 50,000-48076.92 = 1923.08
 This is the value of token B that Mr. X will get. 
 
 This is how AMM works and the constant product ratio is maintained 
+
+
+
+### What are AMM type DEXs ?
+
+In a AMM type DEX (most common), 
+
+- User can create a LP (add two tokens in a ratio he wants and this ratio doesnot change)
+
+- User can add liquidity to the LP (by adding the two tokens in the same ratio as the initial ratio of tokens)
+
+- Users can swap their tokens based on the AMM rates
+
+**Arbitrageurs can make use of lower prices on DEXes and sell them on CEXes, hence maintaining the overall market price.**
+
+
+
+
