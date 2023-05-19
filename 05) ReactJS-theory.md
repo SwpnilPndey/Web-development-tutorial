@@ -155,7 +155,7 @@ const app = () => {
 export default app
 
 
-Then in the NAvbar component, I can take the props as : 
+Then in the Navbar component, I can take the props as : 
 
 import React from 'react'
 
@@ -241,7 +241,7 @@ The useEffect hook takes two arguments: a callback function and an optional depe
 
 The callback function is executed after the component is rendered and any time the component updates
 
-The dependency array specifies the state variables that the effect depends on.
+The dependency array specifies the state variables that the effect depends on. If it depends on all states then keep it empty array.
 
 
 useEffect(()=>{

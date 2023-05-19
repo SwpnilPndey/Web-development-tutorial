@@ -142,7 +142,7 @@ There are primarly three types of DEX :
 - Aggregators based : DEX of DEXes to get best deal. Eg : 1 inch
 
 
-### What is Automated Market Maker in a DEX?
+### What is Automated Market Maker (AMM) in a DEX?
 
 An AMM is a part of decentralized exchange (DEX) that relies on a mathematical formula to determine the prices of assets being traded on the platform.
 
@@ -176,11 +176,36 @@ In a AMM type DEX (most common),
 
 - User can create a LP (add two tokens in a ratio he wants and this ratio doesnot change)
 
-- User can add liquidity to the LP (by adding the two tokens in the same ratio as the initial ratio of tokens)
+- User can add liquidity to the LP (by adding the two tokens in the same ratio as the current ratio of tokens)
 
 - Users can swap their tokens based on the AMM rates
 
 **Arbitrageurs can make use of lower prices on DEXes and sell them on CEXes, hence maintaining the overall market price.**
+
+
+Now, how do we get tokens on a DEX, lets understand : 
+
+- First goto a CEX and buy 100 DAI tokens for 50 USD (fiat)
+
+- Then based on the token I want, lets say I want DOGECOIN, so, I will check for the DEX which has the the pair of DAO and DOGECOIN.
+
+- Then I will swap my DAO tokens with the DOGECOIN tokens 
+
+
+### Then questions comes, what are the benefits to become a liquidity provider?
+
+Well based on the % of liquidity pool that I have created, who so ever uses my pool to swap their tokens, uniswap will pay some transaction fees to me. 
+
+
+
+### What is Yield farming and how is it different from staking ?
+
+Yield farming refers to the practice of earning additional crypto rewards by providing liquidity to decentralized exchanges or lending platforms.
+
+Staking typically involves supporting a blockchain network, whereas yield farming involves providing liquidity to DeFi platforms.
+
+Intention behind both is same : lock crypto and earn interests but the underlying mechanism is different.
+
 
 
 

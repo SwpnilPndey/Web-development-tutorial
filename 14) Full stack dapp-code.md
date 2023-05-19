@@ -1,28 +1,36 @@
 ## We are going to use NextJS for front, hardhat for smart contract and ethers.js for web3 library
 
-1. Install next app : npm create next-app ./
+1. Install next app : npm create next-app name-of-app
 
-2. It will ask for some questions and our structure will be ready. Select No for tailwind CSS as we will install it separately 
+2. It will ask for some questions and our structure will be ready. 
 
-3. We can run our app using npm run dev (check in package.json)
+- Tailwind : NO (We will install it separately) 
+- App router : NO
+- src directory : NO
+- Typescript/ ESLint : NO
+- Import alias : NO
+
+3. Go inside the project folder and now, we can run our app using npm run dev 
 
 4. Install react emmet extension in VS code (to be able to use rafce emmet)
 
-5. In the pages folder created by nextJS, only keep app.js and index.js
+5. There are three folders created : pages, public and styles 
 
-6. Make things clean in index.js
+6. Only leave _app.js and index.js in pages folder. Clear everything in index.js. Add default component webpage in this index.js. This file if deleted give error (default page not found).
 
-7. Install hardhat : npm i hardhat 
+7. Install hardhat : npm i hardhat and @nomicfoundation/hardhat-toolbox (npm install -D)
 
-8. Initialise hardhat : npx hardhat init. It will ask us to install @nomicfoundation/hardhat-toolbox 
+8. Initialise hardhat : npx hardhat init
 
-9. Install ethers and web3modal packages : npm i ethers and npm i web3modal
+9. Install ethers and web3modal packages : npm i ethers web3modal
+(web3modal library provides a unified interface to connect to various wallets)
 
-10. Install tailwindCSS using : npm install -D tailwindcss postcss autoprefixer
+10. Install tailwindCSS using : npm install -D tailwindcss postcss autoprefixer. 
+It may be required to uninstall/ install certain package versions. And then re try installing tailwind packages
 
 11. Initialise tailwindCSS using : npx tailwindcss init -p
 
-12. Put following code in tailwind.config.css : 
+12. Put following standard code in tailwind.config.css : 
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -43,55 +51,205 @@ module.exports = {
   plugins: [],
 }
 
-13. Goto global.css and add following commands to be able to add custom classes for our CSS : 
+13. Goto styles folder and delete Home_modules.css. Now, goto global.css, clear everything and  add following code to be able to add custom classes for our CSS : 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 14. Now, we can write our contracts in contracts folder
 
-15. We can change the deploy script, hardhat.config.js to deploy our smart contract as per our need 
+15. We can change the deploy script, hardhat.config.js to deploy our smart contract as per our need :
+
+**hardhat.config.js goes as** : 
+
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+const NETWORK_URL = process.env.NETWORK_URL;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+module.exports = {
+  solidity: "0.8.18",
+  networks: {
+    testnet: {
+      url: NETWORK_URL,
+      accounts: [PRIVATE_KEY],
+    },
+  },
+};
+
+### Obviously we need to install dotenv package and write NETWORK_URL,PRIVATE_KEY and API_KEY in it (taken from Infura/Alchemy Web3 provider)
+
+**deploy.js goes as** :
+
+const hre = require("hardhat");
+
+async function main() {
+  const mycontract = await hre.ethers.getContractFactory("mycontract");
+  const contract = await mycontract.deploy(); //instance of contract
+  // other constructor variables if needed
+  await contract.deployed(other constructor variables if needed);
+  console.log("Address of contract:", contract.address);
+}
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+
+
 
 16. Now, we need to create front end react components. For this create a Components folder in root 
 
 17. Also, we create a folder for Context, wherein we will handle all our data from smart contract and manage our connection 
 
-18. Create various components in Component folder using jsx notation and initialise every component usinf rafce
+18. Create various components in Component folder using jsx notation after initialising every component using rafce snippet
 
-19. Create index.js inside Components to cumulatively import all components and export them so that we can use them anywhere in the app 
+19. Now goto _app.js file inside pages folder and delete everything and use rafce to get default component : 
 
-20. Inside index.js, import all other components. Suppose I created two components - Navbar and Footer then inside index.js : 
+import '@/styles/globals.css' //mandatory to include in _app.js
+import React from 'react'
+import Footer from '../Components/Footer'
 
-import Footer from './Footer';
-import Navbar from './Navbar';
-
-export {Footer, Navbar}
-
-
-21. Now goto app.js file inside pages folder : 
-
-import '@/styles/globals.css'
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-22. Here import the two components exported by index.js of Components and then wrap it inside main app :
-
-import '@/styles/globals.css'
-
-//Internal Import 
-import {Navbar,Footer} from '../Components';
-
-export default function App({ Component, pageProps }) {
+const _app = () => {
   return (
     <>
-    <Navbar/>
-    <Component {...pageProps} />
-    <Footer/>
-    </>
-  );  
+     <Footer/>
+     </>
+  )
 }
+export default _app
+
+
+
+20. Now, for the case of a single page application, I will have different components of webpage. These will be created separately inside the components folder as different jsx files 
+
+We know the default structure of any component is : 
+
+import statements
+
+const component_name = () => {
+
+  Here the JS functions and contract interactions are handled.
+
+  return (
+    <>
+     HTML to be rendered by that components inclusive of CSS and JS modules. However the JS functions and objects are written within {..}. For ex :  <form onSubmit={function_name}>
+     Inline CSS is written within double {{..}}, however not used much
+     </>
+  )
+}
+export default _app
+
+
+21. So, we will be interacting in the _app.js with the contract and then passing props to the components. 
+
+
+22. Add following code in _app.js : 
+
+import abi from "./contract/chai.json";
+import addresss from "./contract/address.json";
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import Component1 from "./components/Component1";
+import Component2 from "./components/Component2";
+
+
+const _app = () => {
+
+  const [state, setState] = useState({
+    provider: null,
+    signer: null,
+    contract: null,
+  });
+
+  const [account, setAccount] = useState("None");
+
+  useEffect(() => {
+    const connectWallet = async () => {
+      const contractAddress = "address.address";
+      const contractABI = abi.abi;
+      try {
+        const { ethereum } = window;
+
+        if (ethereum) {
+          const account = await ethereum.request({
+            method: "eth_requestAccounts",
+          });
+
+          window.ethereum.on("chainChanged", () => {
+            window.location.reload();
+          });
+
+          window.ethereum.on("accountsChanged", () => {
+            window.location.reload();
+          });
+
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const signer = provider.getSigner();
+          const contract = new ethers.Contract(
+            contractAddress,
+            contractABI,
+            signer
+          );
+          setAccount(account);
+          setState({ provider, signer, contract });
+        } else {
+          alert("Please install metamask");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    connectWallet();
+  }, []);
+
+
+
+  return (
+    <>
+     <Footer state={state}/>
+     </>
+  )
+}
+export default _app
+
+
+
+23. Notice the <Footer state={state}/>. It is to be passed in every component as a prop
+
+
+24. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

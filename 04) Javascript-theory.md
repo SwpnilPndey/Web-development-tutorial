@@ -553,3 +553,19 @@ Very commonly used in programming. If is an alternative for if-else
 ### condition ? value1 : value2;
 
 let message = (number >= 0) ? "The number is positive" : "The number is negative";
+
+
+
+## Spread operator : 
+
+It allows you to expand the any element into individual elements
+
+const array1 = [1, 2, 3];
+const array2 = [...array1, 4, 5, 6]
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const mergedObj = { ...obj1, ...obj2 };
+
+const string = 'Hello';
+const arrayOfSubstrings = [...string]; // ["H", "e", "l", "l", "o"]
