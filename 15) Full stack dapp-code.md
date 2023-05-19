@@ -217,42 +217,40 @@ export default _app
 23. Notice the <Footer state={state}/>. It is to be passed in every component as a prop
 
 
-24. 
+24. Now, in Footer (or other components) add following : 
+
+import { ethers } from "ethers";
+import React from 'react'
+
+const Footer = (**{ state }**) => {
+
+ const function_for_HTML_events = async (event) => {
+    event.preventDefault();
+    const { contract } = state; //we destructure the contract instance from the state
+    
+    // Handle HTML elements 
+    const name = document.querySelector("#name").value;
+    const message = document.querySelector("#message").value;
+    
+    // Execute function of smart contract
+    const transaction = await contract.function_of_smart_contract(name, message);
+    await transaction.wait();
+    
+  };
 
 
 
 
 
+  return (
+    <>
+     HTML elements to execute function on events 
+     </>
+  )
+}
+export default Footer
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+25. This is it. This way we can handle smart contracts with nextJS and make a full stack dapp.

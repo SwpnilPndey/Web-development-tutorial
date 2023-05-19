@@ -213,28 +213,3 @@ decentralization, security and scalability (only two at a time)
 sharding, layer-2 solutions like channels, plasma. roll ups, side chains
 
 ![How scalability works](/images/scalability.gif)
-
-
-
-## Reentrancy attacks on contracts 
-
-Hackers/hijackers can start a transaction with a smart contract which does some function and also transfers some ethers to some address. Before this transaction gets completed, the hijacker can call the function again and since the last transaction is not completed, a new transaction will be initiated. This way multiple calls can be done which will drain the smart contract. 	
-
-So, to avoid this, one of the ways would be to avoid state changes after transfer, explained below : 
-
-uint amount = shares[msg.sender];
-shares[msg.sender] = 0; 
-msg.sender.transfer(amount);
-
-
-This is what we call the CEI withdrawal pattern(Check, Effects and Interaction)
-
-Checks : the require statement
-
-Effects : change in state variables (state of blockchain indirectly)
-
-Interaction : transaction with outer world, like transfers, calls etc. 
-
-How is reentrancy possible : It is interesting to note that if we break the pattern and have the Interaction before Effects, since hacker can run the transaction multiple times before the state change is even recorded (i.e before miners/ other nodes get to know)
-
-

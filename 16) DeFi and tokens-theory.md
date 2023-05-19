@@ -208,5 +208,8 @@ Intention behind both is same : lock crypto and earn interests but the underlyin
 
 
 
+## What is Uniswap V3?
 
+Uniswap V1 provided users to swap their tokens with ethereum only. It means there were many pools but each one had ETH as one token mandatory. So, to swap token A to token B, user needed to swap twice
 
+Uniswap V2 solved this problem as now LP providers could create LPs of different pairs as well. 
