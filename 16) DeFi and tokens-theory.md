@@ -208,8 +208,52 @@ Intention behind both is same : lock crypto and earn interests but the underlyin
 
 
 
-## What is Uniswap V3?
+## What is Uniswap V1, V2, V3?
 
-Uniswap V1 provided users to swap their tokens with ethereum only. It means there were many pools but each one had ETH as one token mandatory. So, to swap token A to token B, user needed to swap twice
+Unlike most exchanges, which match buyers and sellers to determine prices and execute trades, Uniswap uses AMM and pools of tokens and ETH to do the same job
 
-Uniswap V2 solved this problem as now LP providers could create LPs of different pairs as well. 
+
+Uniswap V1 provided users to swap their tokens with ethereum only. It means there were many pools but each one had ETH as one token mandatory. So, to swap token A to token B, user needed to swap twice. Another feature Uniswap v1 introduced was LP tokens, proportional to the percentage of total liquidity they added. Every trade on Uniswap incurred a 0.30% trading fee, which went to the LP providers (Uniswap is free and doesnot charge anything)
+
+
+Uniswap V2 solved this problem as now LP providers could create LPs of different pairs as well. Hence, reduced fees and slippages. ETH bridging was no longer needed. However users could still use custom path (Router contracts) for the swap (this feature is called Multi-Hop or Routing).
+
+### Multi hop is useful sometimes as a trade off between low fees versus more liquidity, arbitrage opportunities etc. 
+
+Uniswap V2 also used Oracles to get transparent prices. 
+
+
+### Uniswap V3 introduced several new features : 
+
+
+- **Concentrated liquidity** : The liquidity I provided in V2 is distributed all across from price 0 to infinity. But, in V3, there are markers (ticks) and I can define that my LP will be used only when the price range is between specific tick (V3 creates individualised price curves for each of the liquidity providers) 
+
+Example : I give liquidity in a LP with 1 ETH to 100 DAI and specify that my LP should be used when 1 ETH is between 80 DAI to 120 DAI only.
+
+So, I earn trading fees for my percent of liqudity in the price range I choose (better fees but risk is also more).
+
+- **Active liquidity** : Risk is more since V3 uses a concept called active liquidity. It means that if the price ratio falls below the range I specified, I will not get any fees obviously and all my LP will be converted to one of the assets. I can rearrange my range or wait till price comes in the range or I can sell my assets also based on the current price. 
+
+- **Range Limit Orders** : This allows LPs to provide a single token as liquidity in a custom price range above or below the current market price. When the market price enters into the specified range, one asset is sold for another along a smooth curve — all while still earning swap fees in the process.
+
+- **Non-Fungible Liquidity** : As each LP can basically create its own price curve, the liquidity positions are no longer fungible and provided liquidity is tracked by non-fungible ERC721 tokens.
+
+- Time-weighted average prices of Oracles is introduced in V3
+
+
+### What is the use of Oracles in Uniswap DEX ? 
+
+One question which comes to our mind is the wha is the use of Oracles to fetch live prices. DEX works on AMM and the prices are handled by it. 
+
+But, in real scenario, Oracle prices fetch prices from various CEXes, DEXes and give a realisitc price for the swap. This aggregated price helps stabilize the overall price within the decentralized exchange (DEX) and prevents significant price discrepancies or surges.
+
+Arbitrageurs play a crucial role in utilizing these oracle prices to maintain price equilibrium and reduce price discrepancies across different trading venues. When a price discrepancy occurs between the DEX and other platforms, arbitrageurs can take advantage of the price difference by buying from the lower-priced platform and selling on the higher-priced one.
+
+
+### But how will the oracle fetch the price of my own created token ?
+
+To get the price of our token, lets say HAWKS, we would need to integrate our token and its corresponding trading pair (HAWKS/USDT) into a reliable price oracle service. Once the integration is set up, we would provide the necessary information about our HAWKS token, such as its contract address, symbol, and decimals, to the oracle provider. We would also specify the trading pair HAWKS/USDT
+
+
+### Various peripheral contracts can be created along with the main contracts. For example : 
+trading fees are no longer automatically reinvested back into the liquidity pool on LPs’ behalf. Peripheral contracts can be created to offer such functionality.
