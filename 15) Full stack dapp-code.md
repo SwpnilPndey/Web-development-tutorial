@@ -12,7 +12,15 @@
 
 3. Go inside the project folder and now, we can run our app using npm run dev 
 
-4. Install react emmet extension in VS code (to be able to use rafce emmet)
+4. Install JS-JSX extension and use rfc for react module skelton
+
+import React from 'react'
+
+export default function check() {
+  return (
+    <div>check</div>
+  )
+}
 
 5. There are three folders created : pages, public and styles 
 
@@ -85,9 +93,10 @@ const hre = require("hardhat");
 
 async function main() {
   const mycontract = await hre.ethers.getContractFactory("mycontract");
-  const contract = await mycontract.deploy(); //instance of contract
   // other constructor variables if needed
-  await contract.deployed(other constructor variables if needed);
+  
+  const contract = await mycontract.deploy(other constructor variables if needed); //instance of contract
+  await contract.deployed();
   console.log("Address of contract:", contract.address);
 }
 main().catch((error) => {
@@ -235,10 +244,11 @@ const Footer = (**{ state }**) => {
     // Execute function of smart contract
     const transaction = await contract.function_of_smart_contract(name, message);
     await transaction.wait();
+
+    // Above syntax is for writing on blockchain. To read from blockchain, simply : 
+    // const value = await contract.function_of_smart_contract(arguments if any);
     
   };
-
-
 
 
 
