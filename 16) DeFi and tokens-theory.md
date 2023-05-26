@@ -216,15 +216,20 @@ Unlike most exchanges, which match buyers and sellers to determine prices and ex
 Uniswap V1 provided users to swap their tokens with ethereum only. It means there were many pools but each one had ETH as one token mandatory. So, to swap token A to token B, user needed to swap twice. Another feature Uniswap v1 introduced was LP tokens, proportional to the percentage of total liquidity they added. Every trade on Uniswap incurred a 0.30% trading fee, which went to the LP providers (Uniswap is free and doesnot charge anything)
 
 
-Uniswap V2 solved this problem as now LP providers could create LPs of different pairs as well. Hence, reduced fees and slippages. ETH bridging was no longer needed. However users could still use custom path (Router contracts) for the swap (this feature is called Multi-Hop or Routing).
+Uniswap V2 solved this problem as now LP providers could create LPs of different pairs as well. Hence, reduced fees and slippages. ETH bridging was no longer needed. However users could still use custom path (Router contracts) for the swap (this feature is called Multi-Hop).
 
-### Multi hop is useful sometimes as a trade off between low fees versus more liquidity, arbitrage opportunities etc. 
+### Multi-Swap (multi-hop trade) and routers 
 
-Uniswap V2 also used Oracles to get transparent prices. 
+It is useful sometimes as a trade off between low fees versus more liquidity, arbitrage opportunities etc. It is used when there is not enough liquidity or depth in a single trading pair to facilitate the trade directly.
+
+Routing algorithms analyze the available liquidity pools and trading pairs on the DEx platform to determine the optimal sequence of swaps needed to convert one token to another
+
+
+
+### Uniswap V2 also used Oracles to get transparent prices. 
 
 
 ### Uniswap V3 introduced several new features : 
-
 
 - **Concentrated liquidity** : The liquidity I provided in V2 is distributed all across from price 0 to infinity. But, in V3, there are markers (ticks) and I can define that my LP will be used only when the price range is between specific tick (V3 creates individualised price curves for each of the liquidity providers) 
 

@@ -287,3 +287,13 @@ require(success, "Call to MyContract failed");
 ### When function returns a value : 
 
 (bool success, bytes memory data) = myContractAddress.call(abi.encodeWithSignature("getData()"));
+
+
+
+## pragma abicoder v2
+
+Above line of code is to be used to use nested arrays in our smart contract. 
+
+
+
+## 
