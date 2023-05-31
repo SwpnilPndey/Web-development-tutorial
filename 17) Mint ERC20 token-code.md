@@ -38,4 +38,12 @@ contract Invest {
 
 } 
 
-### Here Invest smart contract should first be approved by the Token contract to spend the tokens on owner's behalf
+## How to buy/ transfer ERC20 tokens in solidity
+
+1. Here Invest smart contract should first be approved by the Token contract to spend the tokens on owner's behalf
+
+2. In Remix, we can directly go to the token contract and approve the vesting contract to spend tokens from the address whose tokens are to be locked
+
+3. For web3.JS, ethers.JS, we can create separate instances of the token contract and vesting contract and then use approve function of the token contract from the address of investor and then we can use transferFrom function from the owner address to the vesting contract
+
+4. This way we can transfer ERC20 tokens
