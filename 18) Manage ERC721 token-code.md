@@ -89,10 +89,10 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
+import "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
-contract Marketplace is IERC721Receiver {
+contract Marketplace is ERC721Holder {
     using Address for address payable;
 
     struct Listing {

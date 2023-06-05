@@ -99,13 +99,16 @@ contract HAWKSNFT is ERC1155, Ownable, Pausable, ERC1155Supply {
 5. Create a NFT marketplace where users can buy and sell these NFTs
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity <=0.8.9;
 
-import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
+
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFTMarketplace is Ownable {
-    ERC1155 public nftContract;
+import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
+
+contract NFTMarketplace is Ownable, ERC1155Holder {
+    IERC1155 public nftContract;
 
     struct Listing {
         uint256 tokenId;
@@ -120,14 +123,14 @@ contract NFTMarketplace is Ownable {
     event NFTSold(uint256 indexed tokenId, address indexed buyer, uint256 price);
 
     constructor(address _nftContract) {
-        nftContract = ERC1155(_nftContract);
+        nftContract = IERC1155(_nftContract);
     }
 
     function listNFTForSale(uint256 tokenId, uint256 price) external {
         require(nftContract.balanceOf(msg.sender, tokenId) > 0, "You don't own this NFT");
         require(listings[tokenId].active == false, "NFT is already listed");
         
-        nftContract.safeTransferFrom(msg.sender, address(this), tokenId, 1, ""); // 1 quantity NFT
+        nftContract.safeTransferFrom(msg.sender, address(this), tokenId,1, ""); // 1 quantity NFT
         
         listings[tokenId] = Listing(tokenId, msg.sender, price, true);
         emit NFTListed(tokenId, msg.sender, price);
@@ -147,7 +150,9 @@ contract NFTMarketplace is Ownable {
 
         emit NFTSold(tokenId, msg.sender, listing.price);
     }
-}
+        
+    }
+
 
 
 ## This way, ERC 1155 NFT tokens are handled 
