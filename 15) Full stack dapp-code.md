@@ -22,6 +22,7 @@ export default function check() {
   )
 }
 
+
 5. There are three folders created : pages, public and styles 
 
 6. Only leave _app.js and index.js in pages folder. Clear everything in index.js. Add default component webpage in this index.js. This file if deleted give error (default page not found).
