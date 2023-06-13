@@ -19,9 +19,6 @@ for (var i = 0; i < 30000 ; i++) { // for five images
 
 ### Here, the ipfs CID is the CID of the image folder uploaded on ipfs
 
-### To view the JSON on browser, go to : http://ipfs.io/ipfs://bafybeiezpnpiopx2efjcy4zoydbrwe4fghafsakuziiuibonq/metadata.json
-
-
 
 4. Mint NFTs from NFT marketplace
 
