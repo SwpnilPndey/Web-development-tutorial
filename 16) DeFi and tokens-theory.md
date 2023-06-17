@@ -262,3 +262,19 @@ To get the price of our token, lets say HAWKS, we would need to integrate our to
 
 ### Various peripheral contracts can be created along with the main contracts. For example : 
 trading fees are no longer automatically reinvested back into the liquidity pool on LPs’ behalf. Peripheral contracts can be created to offer such functionality.
+
+
+## What is impermanent loss in crypto ?
+
+It is the loss which the liquidity provider (investor) has to bear when he provides adds his assets (like ETH) to a liquidity pool and the price of an asset he provided changes such that if he withdraws his investment now, he will be at loss. 
+
+Its impermanent because if he doesnot withdraw his investment, his loss might correct itself. 
+
+### Investors suffer impermanent loss when price of the asset they provided liquidty of, changes w.r.t the stable coin they hold. But, still investors bear this loss and cover it from the transaction fees of the LPs.
+
+So, to avoid IL : 
+
+- Invest in stable pairs and avoid volatile
+- Provide liquidity in bear market (as when the market goes up, although there is IR, the interest fees is higher to cover the losses)
+- Look for extra incentives platforms 
+

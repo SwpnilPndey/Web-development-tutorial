@@ -89,5 +89,21 @@ contract Attacker is Ownable {
 
 ## How is the reentrancy done in this case ?
 
+First of all the attacker calls the attack function which calls the deposit and withdraw function of the bank contract. 
+
+As soon as the withdraw function is executed, the recieve function of attacker smart contract is executed. And that smart contract runs a loop of withdraw function till the balance is exhausted. 
+
+Then all the balance of the contract is transferred to the attacker account (owner of the attack smart contract)
+
+
+
+## How to protect smart contracts from reentrancy ?
+
+- import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+
+- contract Bank is ReentrancyGuard {
+
+- attach nonReentrant to withdraw function to protect against reentrancy 
+(Inside the library, there is a simple variable whose value is set to 1 and 2 when we use the withdraw once, the value changes to 2). Any calls after the first call will fail)
 
 
