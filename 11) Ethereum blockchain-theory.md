@@ -213,3 +213,11 @@ decentralization, security and scalability (only two at a time)
 sharding, layer-2 solutions like channels, plasma. roll ups, side chains
 
 ![How scalability works](/images/scalability.gif)
+
+
+## What is ENS in ethereum ?
+
+ENS stands for Ethereum Naming Service. It is a smart contract based service where we can store our long and complex Public keys and privat keys and get a cool name in return which we can send to others to interact with us. 
+
+
+
