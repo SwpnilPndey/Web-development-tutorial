@@ -14,30 +14,42 @@ Decimal function is only to show in human readable format. It means if I have on
 
 ## What is the use of tokens in DeFi?
 
+Tokens are like shares. 
 
-Companies create token, distribute them to investors and raise funds via ICO (similar to IPO) and instead of shares in company, the investors get tokens. 
+Following is the general procedure of the fundraising using tokens : 
 
-Investors can benefit in a number of ways in the project ecosystem using those tokens like low cost of tokens if investors invest in presale (showing confidence in project) or subsidized access to company services and dapps or voting rights in significant decisions 
+- A company creates token (anybody can create and mint tokens to its address)
 
-Investors can also stake their share of tokens and earn token staking reward (in terms of native tokens or some other tokens) and portion of transaction fees and this way appreciate the token value with time 
+- It does publicity of its token : 
+    - Own publicity 
+    - Hire a launchpad which has a community 
+    - Ask a CEX to do publicity of tokens on your behalf
+    - Ask a DEX to do publicity of tokens on your behalf
 
-After the initial token distribution, the tokens can be traded on a variety of exchanges, including centralized exchanges like Binance or Coinbase, as well as decentralized exchanges like Uniswap or Sushiswap.
+- It does a presale event (mostly its own website). Owners set a token price and a time of TGE. Investors pay ETH and get their tokens booked. Those tokens would be paid out to them based on a vesting schedule after the TGE
 
-Very similar to shares, the value of tokens is volatile and driven by market forces and sentiments.
+- Now owner can distribute tokens by various methods. 
+    - Directly from website (very less used)
+    - ICO from a website or launchpad. Here the tokens are open for public. Also called public sale 
+    - IEO from CEX
+    - IDO from DEX or a launchpad 
 
-Other way people can earn company tokens is to become whitelisted user and get free tokens called AIRDROPS. Companies expand their user base in which the user needs to do some activities like liking and subscribing on social media, sending the airdrop links to others etc.
+- After the target token are sold, the token owners can **list their token on CEX or DEX** to be able to be traded by common public. Now after this, the price becomes market driven and volatile
+
+
+### For centralised exchanges, token owners need to transfer tokens to a certain address on the ethereum belonging to Binance (examples). Then people can buy tokens from CEXs and trade  
+
+### For decentralised exchanges, people can buy tokens from DEX as soon as I create a liquidity pool in it. Creating a LP is different from listing on the DEX. Listing involves scrutiny by DEX as listing equals prestige for DEX. Simply swapping is possible by searching the token address in swap window in Uniswap app (example)
 
 
 
+## When does staking fit in the cycle ? 
 
-## What is presale vesting of tokens?
+ Staking can be done at any stage - before TGE or after TGE 
 
-The presale events are those where investors get tokens at cheaper prices but they have to keep the tokens locked and withdraw only as per a vesting schedule. 
+ Purpose is same. Hold tokens and get rewards. 
 
-Investors use the lock function to lock their tokens in the vesting contract and after the lock period is over, they can withdraw the unlocked tokens (as per vesting schedule) if they want or keep them invested if they want to earn interests on it.
-
-This is generally done so that investors donot sell all their tokens immediately after ICO and hurt other investors and destabilize the market caused by inflation.
-
+ In presale, people are generally required to stake their tokens (keep them locked) for certain duration and the tokens are available as per vesting schedule (This is generally done so that investors donot sell all their tokens immediately after ICO and hurt other investors and destabilize the market caused by inflation.)
 
 
 
@@ -277,4 +289,3 @@ So, to avoid IL :
 - Invest in stable pairs and avoid volatile
 - Provide liquidity in bear market (as when the market goes up, although there is IR, the interest fees is higher to cover the losses)
 - Look for extra incentives platforms 
-
