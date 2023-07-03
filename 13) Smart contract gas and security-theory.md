@@ -104,6 +104,7 @@ Then all the balance of the contract is transferred to the attacker account (own
 - contract Bank is ReentrancyGuard {
 
 - attach nonReentrant to withdraw function to protect against reentrancy 
-(Inside the library, there is a simple variable whose value is set to 1 and 2 when we use the withdraw once, the value changes to 2). Any calls after the first call will fail)
+(Inside the library, there is a simple variable whose value is set to 1 and 2 when we use the withdraw once, the value changes to 2. Any calls after the first call will fail)
+..}
 
 
