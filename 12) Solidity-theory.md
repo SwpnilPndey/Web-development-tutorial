@@ -293,7 +293,3 @@ require(success, "Call to MyContract failed");
 ## pragma abicoder v2
 
 Above line of code is to be used to use nested arrays in our smart contract. 
-
-
-
-## 
