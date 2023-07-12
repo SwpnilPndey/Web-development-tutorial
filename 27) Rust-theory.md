@@ -45,7 +45,7 @@ let my_array:[i32;4]=[1,2,3,4];
 let my_tuple=(1,"Swapnil",true,my_array);
 
 
-### Print in rust (called print line macro)
+### Print in rust 
 
 println!("The age of the person is {}",my_age);
 
@@ -54,6 +54,10 @@ println!("The required array is {:?}",my_array);
 println!("First element of tuple is {}",my_tuple.0); // tuple elements are accessed using dot notation
 
 **Here println is called macro and {:?} is called token**
+
+**{} is called display trait and used to diplay simple values. {:?} is called debug trait and used for complex values like arrays, tuples, structs, enum**
+
+**Prefer using {:?} trait inside loops as well as the value of variables is going to change in every iteration**
 
 
 
@@ -79,6 +83,50 @@ fn function_name(x:i32,y:i32)->i32 {
 ## Control flow using if else in Rust
 
 if, else, else if are similar to other languages 
+
+### Match function :
+
+fn main() {
+
+let myage=31;
+
+match myage {
+    age if age > 18 =>println!("Eligible to vote"), // No need to initilise age before (age is expression variable)
+    age if age < 18 =>println!("Not eligible"),
+    _ => println!("Unknown age"), // _ means everything else
+}
+}
+
+**However, match is mostly used to match expressions :
+
+let myage=31;
+
+match myage {
+    1 => println!("Age is 1"),
+    ...
+    ..
+    .
+}
+
+
+### enum in rust 
+
+enum Direction {
+    Left,
+    Right
+}
+
+fn main() {
+    let go = Direction::Left;
+
+    match go {
+        Direction::Left=>println!("Go left"),
+        Direction::Right=>println!("Go right),
+        _=>println!("Stay"),
+    }
+}
+
+
 
 
 ## Loop in Rust 
