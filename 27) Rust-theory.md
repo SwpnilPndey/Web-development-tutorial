@@ -346,11 +346,78 @@ It is similar to dynamic array concept of other languages
 
 It has various inbuilt implementations like push, pop, len
 
-let mydynamicarray=vec![1,2,3,4];
+let mydynamicarray:Vec<i32>=vec![1,2,3,4];
 
 ### To create new empty vector, we can use the new keyword => 
 
 let mut myvector=Vec::new();
+
+
+
+## String data types in rust 
+
+Strings can be owned or referenced 
+
+To use owned strings, we use String keyword 
+
+to use referenced string, we use &str (called string slice)
+
+**We use String when using in struct and &str when passing as an argument in function**
+
+
+### To create owned string inside a function, we can use : 
+
+- let owned_string="owned string".to_owned(); // or
+- let owned_string2=String::from("owned string");
+
+- "string inside double quotes" is by default as a borrowed string 
+
+
+So, for example : 
+
+fn printname(name:&str) {
+    println!("{:?}",name);
+}
+
+fn main() {
+    let my_name=String::from("Swapnil");
+    printname(&my_name);
+    // or we could have directly used : printname("Swapnil");
+}
+
+
+
+
+## Derive keyword in rust 
+
+We can use some added functionality to complex data types like enum, struct etc using derive keyword : 
+
+- Normally we can't print a complete struct using println! macro but with Derive keyword, we can use the Debug trait and print complete struct 
+
+#[derive(Debug)]
+struct Mystruct {
+    age:i32,
+}
+
+fn main() {
+    let swapnil=Mystruct {age:32};
+    println!("{:?}",swapnil.age);
+    println!("{:?}",swapnil);
+}
+
+Output : 
+32
+Mystruct { age: 32 }
+
+
+### Similarly we can use Clone, Copy traits to create copy of variables when being used by other functions. This avoids the confusion that may occur with borrowing functionality as instead of move, copy is implemented 
+
+### #derive[(Debug, Clone, Copy)]
+
+### Also, if some struct has enums or other structs, then those enums and structs should also follow the same traits other compiler throws errors 
+
+### However, making expensive copies should be avoided to the extent possible 
+
 
 
 
