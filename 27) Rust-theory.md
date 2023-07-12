@@ -53,6 +53,8 @@ println!("The required array is {:?}",my_array);
 
 println!("First element of tuple is {}",my_tuple.0); // tuple elements are accessed using dot notation
 
+**Here println is called macro and {:?} is called token**
+
 
 
 
@@ -97,6 +99,21 @@ loop {
         break;
     }
 }
+
+
+## Run a rust program 
+
+Cargo is the package manager for rust (like npm)
+
+- Install rustup
+- Create a project folder (like truffle) : cargo init <name of project> 
+- Write the code in the main.rs file located inside src folder 
+- Then run the program using : cargo run
+
+**to run a specific file, use : cargo run --bin <filename without .rs>**
+
+**cargo run -q** is used to simply display the output in terminal
+
 
 
 
