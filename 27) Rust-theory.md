@@ -126,7 +126,7 @@ fn main() {
     match go {
         Direction::Left=>println!("Go left"),
         Direction::Right=>println!("Go right"),
-        _=>println!("Stay"),
+        other=>println!("{:?}",other),
     }
 }
 
@@ -354,13 +354,15 @@ let mut myvector=Vec::new();
 
 
 
+
+
 ## String data types in rust 
 
 Strings can be owned or referenced 
 
 To use owned strings, we use String keyword 
 
-to use referenced string, we use &str (called string slice)
+to use referenced string, we use &str
 
 **We use String when using in struct and &str when passing as an argument in function**
 
@@ -385,6 +387,13 @@ fn main() {
     // or we could have directly used : printname("Swapnil");
 }
 
+
+### String slice : 
+
+let somestring=String::from("Swapnil");
+
+let sliced=&somestring[0..=3]; // 0 to 3 where 3 is also included. only .. is used to exclude 3
+println!("{:?}",sliced);
 
 
 
@@ -420,6 +429,39 @@ Mystruct { age: 32 }
 
 
 
+
+## Option keyword in Rust 
+
+ It is used for data which may take some value some time or no value sometime. It is mostly used in scenarios where the user may or may not provide a value 
+
+ struct Survey {
+    q1:Option<i32>,
+    q2:Option<bool>,
+ }
+
+ fn main() {
+    let response_1=Survey {
+                        q1:Some(23),
+                        q2:Some(true),
+    };
+
+    let response_2=Survey {
+                        q1:None,
+                        q2:Some(false),
+    };
+}
+
+
+### It can used along with Match keyword to check whether users have responded or not
+
+
+
+
+## Using standard libraries in rust 
+
+- Goto terminal and type : rustup doc 
+
+- Click on extensive API documentation
 
 
 
