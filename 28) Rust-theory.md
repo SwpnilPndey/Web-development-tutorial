@@ -397,6 +397,34 @@ println!("{:?}",sliced);
 
 
 
+
+
+
+## Hashmap type in rust 
+
+It is like mapping of solidity (key value pairs)
+
+use std::collection::HashMap;
+
+fn main() {
+    let mut locker=HashMap::new();
+    locker.insert(1,"Swapnil");
+    locker.insert(2,"Anupma");
+    locker.insert(3,"Tasvica");
+
+    println!("{:?}",locker.get(&2)); // borrowing to be used 
+}
+
+
+### to update the values attached to keys, use locker.insert(key, value) // owned values of both key and value 
+### to remove a key value pair, locker.use remove(&key)
+### to accesss the value, use locker.get(&key)
+
+
+
+
+
+
 ## Derive keyword in rust 
 
 We can use some added functionality to complex data types like enum, struct etc using derive keyword : 
@@ -462,6 +490,29 @@ Mystruct { age: 32 }
 - Goto terminal and type : rustup doc 
 
 - Click on extensive API documentation
+
+- Use the libraries as directed 
+
+
+
+
+## How to take inputs from user in rust 
+
+use std::io;
+
+fn main() {
+    
+    let mut input = String::new();
+
+    
+    println!("Enter your name:");
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+
+    println!("Hello, {}", input);
+}
+
+
+
 
 
 
