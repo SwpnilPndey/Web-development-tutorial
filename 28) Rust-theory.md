@@ -494,6 +494,17 @@ Mystruct { age: 32 }
 - Use the libraries as directed 
 
 
+## Using user created libraries in rust 
+
+This is done using crates.io (build by rust community)
+
+So, to use suppose random number generation library, we need to include : rand="0.8.4"or atest version, below the dependencies in Cargo.toml file 
+
+Then in the program, we can use the library as : use rand; (at the top of program)
+
+
+
+
 
 
 ## How to take inputs from user in rust 
