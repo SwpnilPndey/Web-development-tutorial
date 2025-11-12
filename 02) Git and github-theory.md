@@ -1,23 +1,24 @@
 # How to push code from local repo to remote repo
 
 1) Create a project folder 
-2) Make project files 
+2) Make project files using VS code
 3) Initialise git using git init 
 4) Add changes in project to staging area using git add .
 5) Commit those changes : git commit -m "Message"
-6) Create a remote repo in github 
-7) Create SSH key in local computer :- 
+6) Configture username and email using git config user.name "Swapnil Pandey" and git config user.email "swpnil.pndey@gmail.com"
+7) Create a remote repo in github 
+8) Create SSH key in local computer :- 
   - : Write following on terminal : ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
   - Press enter twice
   - A message will be displayed giving the location where the SSH key has been generated : <some address>/.ssh/
   - Use cat ~/.ssh/id_rsa.pub to display the SSH key on terminal
   - Goto Github > Developer settings > Generate SSH and GPG keys > Create new Key >paste the SSH key from terminal and save it 
 8) Add remote using SSH URL : git remote add origin <SSH URL of github repo>
-9) Push the changes to remote repo using : git push origin <name of the branch>
+9) Push the changes to remote repo using : git push origin <name of the branch> {# this is now globally master, unless specified}
 
 The code has been pushed. 
 
-If we make some changes in remote repo, we can sync our local repo using : git pull origin master (default branch)
+If we make some changes in remote repo, we can sync our local repo using : git pull origin master
 
 
 
